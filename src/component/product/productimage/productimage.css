@@ -1,0 +1,14 @@
+.product-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.product-image img {
+  max-width: 450px;
+  max-height: 450px;
+  width: 100%;
+  object-fit: contain;
+  border-radius: 13px;
+}

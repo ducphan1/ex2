@@ -1,0 +1,102 @@
+.gift-item {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    text-align: center;
+    width: 197px;
+    height: 310px;
+    margin-top: 10px;
+}
+
+.gift-items {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    margin-left: 250px;
+    width: 948px;
+    height: 630px;
+    margin-top: 100px;
+}
+
+.gift-item img {
+    width: 197px;
+    height: 197px;
+    background: #FFFFFF;
+    border-radius: 13px;
+}
+
+.gift-item h3 {
+    font-size: 16px;
+    color: #333;
+    margin: 0;
+}
+
+.gift-item p {
+    color: #ff6b6b;
+    font-size: 14px;
+    margin-top: 8px;
+}
+
+.item-details {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0 10px;
+    margin-top: 8px;
+}
+
+.item-name {
+    width: 156px;
+    height: 60px;
+    font-family: 'Be Vietnam';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 100%;
+    text-align: left;
+    color: #383838;
+    word-wrap: break-word;
+
+}
+
+.cart-button {
+    background: none;
+    border: none;
+    color: #555;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.cart-button:hover {
+    color: #ff6b6b;
+}
+
+.gift-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: -60px;
+    margin-top: 30px;
+    margin-left: 255px;
+    width: 847px;
+}
+
+.gift-header h1 {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.create-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0px 27px;
+    width: 85px;
+    height: 57px;
+    background: #FF4D00;
+    border-radius: 10px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}

@@ -1,0 +1,15 @@
+.app {
+  font-family: Arial, sans-serif;
+  width:auto;
+  height: 1547px;
+  width: 1106px;
+  padding: 20px;
+  margin-left: 100px;
+}
+
+.gift-items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
