@@ -1,32 +1,55 @@
-// src/component/product/ProductDisplay.jsx
-import React from "react";
-import ProductImage from "../productimage/productimage";
-import ProductDescription from "../productdescription/productdescription";
-import Comment from "../../comment/comment";
-import Note from "../../comment/note";
+import React, { useState } from "react";
 import "./productdisplay.css";
 
 const ProductDisplay = ({ product }) => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const handleOpenModal = () => setIsModalOpen(true);
+  const handleCloseModal = () => setIsModalOpen(false);
+
   return (
-    <div className="product-display">
-      {/* Hiển thị ảnh sản phẩm */}
-      <ProductImage imageUrl={product.imageUrl} />
+    <>
+      <div className="product-item" onClick={handleOpenModal}>
+        <img
+          src={product.imageUrl}
+          alt={product.name}
+          className="product-image"
+        />
+        <div className="product-info">
+          <h3>{product.name}</h3>
+          <p>{product.price}</p>
+        </div>
+      </div>
 
-      {/* Hiển thị mô tả sản phẩm */}
-      <ProductDescription description={product.description} />
-      <p className="description">
-        Ngũ hạt thập cẩm đặc sản Langfarm – Món ăn vặt ưa thích, hương vị thơm
-        ngon, an
-        <br />
-        toàn vệ sinh. Phù hợp làm quà vào các dịp lễ, thân thiện với mọi nhà.
-      </p>
-
-      {/* Phần bình luận */}
-      <Comment comments={product.comments} />
-
-      {/* Phần ghi chú */}
-      <Note notes={product.notes} />
-    </div>
+      {isModalOpen && (
+        <div className="modal-overlay">
+          <div className="modal-content">
+            <span className="close-btn" onClick={handleCloseModal}>
+              ×
+            </span>
+            <img
+              src={product.imageUrl}
+              alt={product.name}
+              className="modal-image"
+            />
+            <div className="modal-details">
+              <h2>{product.name}</h2>
+              <p className="modal-price">{product.price}</p>
+              <div className="rating">
+                <span>⭐⭐⭐⭐</span>
+              </div>
+              <p>{product.description}</p>
+              <div className="modal-actions">
+                <button className="buy-btn">Chọn mua</button>
+                <button className="close-btn" onClick={handleCloseModal}>
+                  Đóng
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+    </>
   );
 };
 

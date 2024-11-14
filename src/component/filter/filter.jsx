@@ -18,9 +18,9 @@ const Filter = () => {
         </select>
         <select>
           <option value="all">Danh mục</option>
-          <option value="wine">Rượu</option>
+          <option value="tea">Trà</option>
           <option value="nuts">Hạt</option>
-          <option value="fruits">Hoa quả</option>
+          <option value="granola">granola</option>
         </select>
         <select>
           <option value="recent">Đã thêm: Gần đây (mới nhất)</option>

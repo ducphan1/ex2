@@ -100,3 +100,45 @@
     font-weight: bold;
     cursor: pointer;
 }
+
+.product-detail .add-to-cart-btn {
+    background-color: #FF4D00;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 15px;
+}
+
+.product-detail .add-to-cart-btn:hover {
+    background-color: #e03e00;
+}
+
+.product-detail button {
+    background-color: #FF6B6B;
+    color: white;
+    border: none;
+    font-size: 18px;
+    padding: 5px 15px;
+    margin: 0 10px;
+    cursor: pointer;
+}
+
+.product-detail span {
+    font-size: 20px;
+    font-weight: bold;
+    margin: 0 10px;
+}
+
+/* Modal styling */
+.ant-modal-content {
+    border-radius: 15px;
+    padding: 20px;
+}
+
+.ant-modal-header {
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+}

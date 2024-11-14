@@ -1,43 +1,91 @@
-
-.product-display {
+.product-item {
   display: flex;
   flex-direction: column;
   align-items: center;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.product-image {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+}
+
+.product-info h3 {
+  margin-top: 10px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.product-info p {
+  margin-top: 5px;
+  font-size: 16px;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.modal-content {
+  background-color: white;
   padding: 20px;
-  margin-top: 50px;
-}
-
-.product-display img {
-  width: 375px;
-  height: 375px;
-  object-fit: contain;
-  margin-bottom: -95px;
-  margin-right: 500px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-.product-display h2 {
-  font-size: 24px;
-  margin-bottom: 10px;
+  border-radius: 10px;
+  width: 60%;
+  max-width: 600px;
+  position: relative;
   text-align: center;
 }
 
-.product-display p {
-  width: 979px;
-  height: 48px; 
-  position: absolute;
-  margin-top: 450px;
-  margin-left: 100px;
-  font-family: 'Be Vietnam';
-  font-style: normal;
-  font-weight: 500;
-  font-size: 24px;
-  line-height: 100%;
-  display: flex;
-  align-items: center;
-  color: #383838;
-  flex: none;
-  order: 1;
-  flex-grow: 0;
+.modal-image {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
 
+.modal-details {
+  margin-top: 20px;
+}
+
+.modal-price {
+  font-size: 20px;
+  color: #f56a00;
+  font-weight: bold;
+}
+
+.rating {
+  margin: 10px 0;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.buy-btn, .close-btn {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+}
+
+.buy-btn {
+  background-color: #f56a00;
+  color: white;
+}
+
+.close-btn {
+  background-color: #888;
+  color: white;
 }
