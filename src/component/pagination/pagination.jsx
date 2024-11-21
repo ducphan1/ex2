@@ -1,10 +1,16 @@
+import React from "react";
 import "./pagination.css";
 
 const Pagination = ({ currentPage, totalPages, onPageChange }) => {
   const renderPageNumbers = () => {
     const pages = [];
     for (let i = 1; i <= totalPages; i++) {
-      if (i <= 4 || i === totalPages) {
+      if (
+        i <= 4 ||
+        i === totalPages ||
+        i === currentPage - 1 ||
+        i === currentPage + 1
+      ) {
         pages.push(
           <button
             key={i}
@@ -14,7 +20,7 @@ const Pagination = ({ currentPage, totalPages, onPageChange }) => {
             {i}
           </button>
         );
-      } else if (i === 5) {
+      } else if (i === 5 && totalPages > 5) {
         pages.push(<span key="dots">...</span>);
       }
     }
@@ -27,14 +33,14 @@ const Pagination = ({ currentPage, totalPages, onPageChange }) => {
         onClick={() => onPageChange(currentPage - 1)}
         disabled={currentPage === 1}
       >
-        &laquo; {}
+        &laquo;
       </button>
       {renderPageNumbers()}
       <button
         onClick={() => onPageChange(currentPage + 1)}
         disabled={currentPage === totalPages}
       >
-        &raquo; {}
+        &raquo;
       </button>
     </div>
   );

@@ -1,7 +1,8 @@
-import React, { useState } from "react";
-import { Modal, Button } from "antd";
+import { useState } from "react";
+import { Modal, Button, Input } from "antd";
 import { ShoppingCartOutlined } from "@ant-design/icons";
 import "./gift.css";
+import CreateProductModal from "../product/createproduct/createproduct";
 
 import image1 from "../../assets/image/image 2.png";
 import image2 from "../../assets/image/image 3.png";
@@ -15,8 +16,9 @@ import image8 from "../../assets/image/image 9.png";
 const GiftItem = () => {
   const [isModalVisible, setIsModalVisible] = useState(false);
   const [selectedProduct, setSelectedProduct] = useState(null);
-
-  const giftItems = [
+  const [quantity, setQuantity] = useState(0);
+  const [comment, setComment] = useState("");
+  const [giftItems, setGiftItems] = useState([
     {
       id: 1,
       name: "Granola siêu hạt ăn kiêng 15% yến mạch",
@@ -73,23 +75,43 @@ const GiftItem = () => {
       imageUrl: image8,
       description: "Bột rau má tốt cho sức khỏe, thanh nhiệt",
     },
-  ];
+  ]);
 
   const handleProductClick = (product) => {
     setSelectedProduct(product);
     setIsModalVisible(true);
+    setQuantity(0);
+    setComment("");
   };
 
-  const handleOk = () => {
+  const handleAddToCart = () => {
+    console.log("Sản phẩm đã chọn:", selectedProduct);
+    console.log("Số lượng:", quantity);
+    console.log("Ghi chú:", comment);
     setIsModalVisible(false);
   };
 
-  const handleCancel = () => {
+  const handleQuantityChange = (value) => {
+    if (value >= 0) setQuantity(value);
+  };
+
+  const handleCreateProduct = (newProduct) => {
+    setGiftItems((prevItems) => [...prevItems, newProduct]);
     setIsModalVisible(false);
   };
 
   return (
     <div className="gift-container">
+      <div className="gift-header">
+        <h1>Quà tặng</h1>
+        <button
+          className="create-button"
+          onClick={() => setIsModalVisible(true)}
+        >
+          Tạo mới
+        </button>
+      </div>
+
       <div className="gift-items">
         {giftItems.map((item) => (
           <div
@@ -109,45 +131,11 @@ const GiftItem = () => {
         ))}
       </div>
 
-      <Modal
-        title={selectedProduct?.name}
-        visible={isModalVisible}
-        onOk={handleOk}
-        onCancel={handleCancel}
-        footer={[
-          <Button key="back" onClick={handleCancel}>
-            Đóng
-          </Button>,
-        ]}
-      >
-        {selectedProduct && (
-          <div className="product-detail">
-            <img
-              src={selectedProduct.imageUrl}
-              alt={selectedProduct.name}
-              style={{ width: "100%", marginBottom: "10px" }}
-            />
-            <p>
-              <strong>Giá: </strong>
-              {selectedProduct.price}
-            </p>
-            <p>
-              <strong>Phân loại: </strong>Vừa
-            </p>
-            <p>
-              <strong>Mô tả: </strong>
-              {selectedProduct.description}
-            </p>
-            <div>
-              <strong>Số lượng: </strong>
-              <button>-</button>
-              <span>0</span>
-              <button>+</button>
-            </div>
-            <button className="add-to-cart-btn">Chọn mua</button>
-          </div>
-        )}
-      </Modal>
+      <CreateProductModal
+        isModalOpen={isModalVisible}
+        handleOk={handleCreateProduct}
+        handleCancel={() => setIsModalVisible(false)}
+      />
     </div>
   );
 };

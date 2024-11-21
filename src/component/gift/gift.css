@@ -1,12 +1,43 @@
-.gift-item {
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    text-align: center;
-    width: 197px;
-    height: 310px;
-    margin-top: 10px;
+.gift-container {
+    padding: 20px;
 }
 
+
+.gift-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 30px;
+    margin-left: 255px;
+    width: 847px;
+}
+
+.gift-header h1 {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.create-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0px 27px;
+    width: 130px;
+    height: 40px;
+    background: #FF4D00;
+    border-radius: 10px;
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.create-button:hover {
+    background-color: #e03e00;
+}
+
+/* Gift Items List */
 .gift-items {
     display: flex;
     flex-wrap: wrap;
@@ -15,6 +46,22 @@
     width: 948px;
     height: 630px;
     margin-top: 100px;
+}
+
+.gift-item {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    text-align: center;
+    width: 197px;
+    height: 310px;
+    margin-top: 10px;
+    background-color: #fff;
+    transition: transform 0.2s ease;
+}
+
+.gift-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .gift-item img {
@@ -56,7 +103,6 @@
     text-align: left;
     color: #383838;
     word-wrap: break-word;
-
 }
 
 .cart-button {
@@ -71,34 +117,10 @@
     color: #ff6b6b;
 }
 
-.gift-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: -60px;
-    margin-top: 30px;
-    margin-left: 255px;
-    width: 847px;
-}
 
-.gift-header h1 {
-    font-size: 24px;
-    font-weight: bold;
-    margin: 0;
-}
-
-.create-button {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 0px 27px;
-    width: 85px;
-    height: 57px;
-    background: #FF4D00;
+.product-detail img {
+    max-width: 100%;
     border-radius: 10px;
-    color: white;
-    font-weight: bold;
-    cursor: pointer;
 }
 
 .product-detail .add-to-cart-btn {
@@ -132,7 +154,7 @@
     margin: 0 10px;
 }
 
-/* Modal styling */
+
 .ant-modal-content {
     border-radius: 15px;
     padding: 20px;
@@ -141,4 +163,18 @@
 .ant-modal-header {
     border-bottom: 1px solid #ddd;
     padding-bottom: 10px;
+}
+
+
+.modal-footer button {
+    background-color: #FF4D00;
+    color: white;
+    border-radius: 5px;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+}
+
+.modal-footer button:hover {
+    background-color: #e03e00;
 }
