@@ -195,3 +195,19 @@
 .item-price-date .created-at {
     color: #888;
 }
+
+.delete-button {
+    background: #FF6B6B;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 10px;
+  }
+  
+  .delete-button:hover {
+    background-color: #e03e00;
+  }
+  

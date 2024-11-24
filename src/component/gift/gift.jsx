@@ -15,8 +15,8 @@ import image7 from "../../assets/image/image 8.png";
 import image8 from "../../assets/image/image 9.png";
 
 const GiftItem = () => {
-  const [isProductModalVisible, setIsProductModalVisible] = useState(false); // Modal chi tiết sản phẩm
-  const [isCreateModalVisible, setIsCreateModalVisible] = useState(false); // Modal tạo sản phẩm mới
+  const [isProductModalVisible, setIsProductModalVisible] = useState(false);
+  const [isCreateModalVisible, setIsCreateModalVisible] = useState(false);
   const [selectedProduct, setSelectedProduct] = useState(null);
   const [quantity, setQuantity] = useState(0);
   const [comment, setComment] = useState("");
