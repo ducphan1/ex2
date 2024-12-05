@@ -1,0 +1,50 @@
+.my-shop {
+    margin-left: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 67px 130px;
+    position: relative;
+    width: 1106px;
+    height: 1547px;
+    background: #FFFFFF;
+}
+
+.my-favorites {
+    height: 573px;
+
+    .hero-text-section {
+        height: 47px;
+
+        .hero-text {
+            color: #E6656E;
+            font-size: 32px;
+            text-shadow: 0px 4px 4px #d6d6d6;
+        }
+    }
+}
+
+.banner-section {
+    margin-top: 56px;
+    margin-bottom: 56px;
+    display: flex;
+    height: 197px;
+    width: 631px;
+
+    .banner-image {
+        img {
+            border-radius: 5px;
+        }
+
+    }
+
+    .banner-text {
+        margin-left: 20px;
+        font-size: 24px;
+        text-shadow: 0 4px 4px #d9d9d9;
+        display: flex;
+        align-items: center;
+    }
+
+}

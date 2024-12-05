@@ -1,41 +1,25 @@
-import { useState } from "react";
+import { Routes, Route } from "react-router-dom";
+import MyShop from "./shop/shop";
 import "./App.css";
-import FavoriteIntro from "./component/favorite/favorite";
-import Filter from "./component/filter/filter";
-import GiftItem from "./component/gift/gift";
-import Pagination from "./component/pagination/pagination";
-import ProductDisplay from "./component/product/productdisplay/productdisplay";
-
-const App = () => {
-  const [currentPage, setCurrentPage] = useState(1);
-  const [selectedProduct, setSelectedProduct] = useState(null);
-
-  const handleProductClick = (product) => {
-    setSelectedProduct(product);
-  };
-
-  const handleBack = () => {
-    setSelectedProduct(null);
-  };
-
+import PageDetailProduct from "./shop/product/detailproduct/pagedetailproduct";
+function App() {
   return (
-    <div className="app">
-      {selectedProduct ? (
-        <ProductDisplay product={selectedProduct} onBack={handleBack} />
-      ) : (
-        <>
-          <FavoriteIntro />
-          <Filter onFilterChange={console.log} />
-          <GiftItem onProductClick={handleProductClick} />
-          <Pagination
-            currentPage={currentPage}
-            totalPages={Math.ceil(8 / 8)}
-            onPageChange={setCurrentPage}
-          />
-        </>
-      )}
-    </div>
+    <>
+      <Routes>
+        <Route path="/" element={<MyShop />} />
+
+        <Route path="/product" element={<MyShop />} />
+
+        <Route
+          path="/productDetail/:productId"
+          element={<PageDetailProduct />}
+        />
+        <Route path="/signin" element={<div>Sign in</div>} />
+        <Route path="/signup" element={<div>Sign up</div>} />
+        <Route path="*" element={<div>404</div>} />
+      </Routes>
+    </>
   );
-};
+}
 
 export default App;
